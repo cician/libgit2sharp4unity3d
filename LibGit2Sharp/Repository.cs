@@ -1,3 +1,5 @@
+﻿using Theraot.Core;
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -157,7 +159,7 @@ namespace LibGit2Sharp
         {
             Ensure.ArgumentNotNull(path, "path");
 
-            if (string.IsNullOrWhiteSpace(path))
+            if (StringHelper.IsNullOrWhiteSpace(path))
             {
                 return false;
             }

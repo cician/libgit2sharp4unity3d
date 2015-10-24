@@ -1,3 +1,5 @@
+using Theraot.Core;
+
 namespace LibGit2Sharp.Core
 {
     internal static class GitDiffExtensions

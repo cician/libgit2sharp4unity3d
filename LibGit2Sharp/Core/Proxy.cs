@@ -1,3 +1,5 @@
+using Theraot.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -2268,7 +2270,7 @@ namespace LibGit2Sharp.Core
                     directRefs.Add(name, new DirectReference(name, repository, remoteHead.Oid));
                 }
 
-                currentHead = IntPtr.Add(currentHead, IntPtr.Size);
+                currentHead = IntPtrHelper.Add(currentHead, IntPtr.Size);
             }
 
             for (int i = 0; i < symRefs.Count; i++)

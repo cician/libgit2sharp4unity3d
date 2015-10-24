@@ -1,3 +1,5 @@
+using Theraot.Core;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -102,7 +104,7 @@ namespace LibGit2Sharp
                 return configPath;
             }
 
-            var gitConfigPath = Path.Combine(path.Native, ".git", "config");
+            var gitConfigPath = PathHelper.Combine(path.Native, ".git", "config");
 
             if (File.Exists(gitConfigPath))
             {

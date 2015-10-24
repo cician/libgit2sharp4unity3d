@@ -1,3 +1,5 @@
+﻿using Theraot.Core;
+
 ﻿using System;
 
 namespace LibGit2Sharp.Core
@@ -13,7 +15,7 @@ namespace LibGit2Sharp.Core
     {
         public static string ProcessorArchitecture
         {
-            get { return Environment.Is64BitProcess ? "amd64" : "x86"; }
+            get { return EnvironmentHelper.Is64BitProcess ? "amd64" : "x86"; }
         }
 
         public static OperatingSystemType OperatingSystem

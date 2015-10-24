@@ -1,3 +1,5 @@
+using Theraot.Core;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,7 +34,7 @@ namespace LibGit2Sharp
 
             this.name = name;
             this.attributes = attributes;
-            var attributesAsString = string.Join(",", this.attributes.Select(attr => attr.FilterDefinition));
+            var attributesAsString = StringHelper.Join(",", this.attributes.Select(attr => attr.FilterDefinition));
 
             gitFilter = new GitFilter
             {

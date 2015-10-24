@@ -1,3 +1,5 @@
+using Theraot.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -110,7 +112,7 @@ namespace LibGit2Sharp
             if (!ChangesBuilders.TryGetValue(typeof(T), out builder))
             {
                 throw new LibGit2SharpException("User-defined types passed to Compare are not supported. Supported values are: {0}",
-                    string.Join(", ", ChangesBuilders.Keys.Select(x => x.Name)));
+                    StringHelper.Join(", ", ChangesBuilders.Keys.Select(x => x.Name)));
             }
 
             return (T)builder(diff);

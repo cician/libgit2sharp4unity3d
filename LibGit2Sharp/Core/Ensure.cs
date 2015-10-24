@@ -1,3 +1,5 @@
+﻿using Theraot.Core;
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -49,7 +51,7 @@ namespace LibGit2Sharp.Core
         {
             ArgumentNotNull(argumentValue, argumentName);
 
-            if (String.IsNullOrWhiteSpace (argumentValue))
+            if (StringHelper.IsNullOrWhiteSpace (argumentValue))
             {
                 throw new ArgumentException("String cannot be empty", argumentName);
             }
