@@ -1,3 +1,33 @@
+# About this fork
+This is my fork of [LibGit2Sharp](https://github.com/libgit2/libgit2sharp) intended for use inside of Unity3D editor.
+The reason is that Unity3D's mono stack is stii~ll stuck on a subset of .net 3.5 level, while LibGit2Sharp understandably moved on and bumped minimum required .net profile to 4.0.
+
+## Remarks
+This is indended to be used by tools from Unity editor only, not in games/apps. It should work on Windows (x86/x64), Macos X (x86/x64) and Linux (x64 only). Fortunatelly pre-compiled binaries of libgit2 match editor platforms just right.
+
+In order to ease the port and maintainance the [Theraot](https://github.com/theraot/Theraot) library is introduced as dependency. It's MIT licensed just like LibGit2Sharp and gets pulled from nuget.
+
+Tests project is left unchanged. It would be nice to port the tests to run inside unity, but that's not on my priority list.
+
+For now this fork follows vNext branch, but will probably switch to a latest stable in the future.
+
+## Compiling
+Myself, I'm just open MonoDevelop and hit compile ;)
+
+## Usage in Unity3D
+Copy over LibGit2Sharp.dll, Theraot.Core.dll and NativeBinaries directory into your project and place them under an Editor folder.
+Since Unity doesn't support native dll mapping files, you need to:
+a) rename them as following  
+- NativeBinaries/linux/amd64/git2-821131f.so
+- NativeBinaries/osx/x86_amd64/git2-821131f.bundle
+- NativeBinaries/windows/amd64/git2-821131f.dll
+- NativeBinaries/windows/x86/git2-821131f.dll
+Replace the suffix with the current one, since it changes with each version of libgit2.
+Note that the the file extension changed for macos x. It's not quite correct, but should work.
+The actual path doesn't actually matter, unity manages to load them, I split them this way just to avoid name clashes.
+
+b) manually select supported platforms for each native library (editor, o/s and architecture).
+
 # LibGit2Sharp
 
 **LibGit2Sharp brings all the might and speed of [libgit2][libgit2], a native Git implementation, to the managed world of .NET and Mono.**
