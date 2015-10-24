@@ -17,11 +17,14 @@ Myself, I'm just open MonoDevelop and hit compile ;)
 ## Usage in Unity3D
 Copy over LibGit2Sharp.dll, Theraot.Core.dll and NativeBinaries directory into your project and place them under an Editor folder.
 Since Unity doesn't support native dll mapping files, you need to:
-a) rename them as following  
+
+a) rename them as following
+
 - NativeBinaries/linux/amd64/git2-821131f.so
 - NativeBinaries/osx/x86_amd64/git2-821131f.bundle
 - NativeBinaries/windows/amd64/git2-821131f.dll
 - NativeBinaries/windows/x86/git2-821131f.dll
+
 Replace the suffix with the current one, since it changes with each version of libgit2.
 Note that the the file extension changed for macos x. It's not quite correct, but should work.
 The actual path doesn't actually matter, unity manages to load them, I split them this way just to avoid name clashes.
